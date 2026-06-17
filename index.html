@@ -8,6 +8,10 @@
     <meta name="keywords" content="Sewa Alat Proyek Bandung, jasa sewa, rental murah, tempat persewaan, spesialis, harga rental, agen resmi, vendor">
     <meta name="robots" content="index, follow">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-dark: #0a0a0a;
@@ -16,78 +20,139 @@
             --text-muted: #a1a1aa;
             --accent: #facc15;
             --accent-hover: #eab308;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --border-color: rgba(255, 255, 255, 0.05);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
         
-        /* Typography */
-        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #ffffff; text-transform: uppercase; }
-        h1 { font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -1px; }
-        h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--accent); }
-        h3 { font-size: 1.25rem; margin-top: 1rem; }
-        p { margin-bottom: 1rem; font-size: 1rem; color: var(--text-muted); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Premium Typography Application */
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            overflow-x: hidden; 
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: 'Montserrat', sans-serif; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+            font-weight: 600;
+        }
+        
+        h1 { 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            letter-spacing: -0.04em; /* Tighter tracking like aura.build */
+            line-height: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        h2 { 
+            font-size: clamp(1.8rem, 4vw, 3rem); 
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        h2 span { color: var(--text-muted); } /* Two-tone heading effect */
+        
+        h3 { font-size: 1.25rem; margin-top: 1rem; letter-spacing: -0.01em; }
+        p { margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-muted); }
         
         /* Layout & Utilities */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 5rem 0; border-bottom: 1px solid var(--border-color); }
+        .section { padding: 6rem 0; border-top: 1px solid var(--border-color); }
         .grid { display: grid; gap: 2rem; }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
         
+        /* Smooth fade up animation */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
         /* Hero Section */
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
         .hero-img { position: absolute; inset: 0; z-index: 0; }
-        .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(100%); }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-dark), transparent); z-index: 1; }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; }
-        .badge { display: inline-block; padding: 0.25rem 1rem; border-left: 2px solid var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; background: rgba(255,255,255,0.05); }
+        .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: grayscale(100%); transition: transform 10s ease; }
+        .hero:hover .hero-img img { transform: scale(1.05); } /* Subtle zoom */
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-dark) 5%, rgba(10,10,10,0.6), rgba(10,10,10,0.3)); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; padding-bottom: 4rem;}
+        
+        .badge { 
+            display: inline-flex; align-items: center; gap: 8px; 
+            padding: 0.25rem 1rem; border-left: 1px solid rgba(255,255,255,0.3); 
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; 
+            text-transform: uppercase; margin-bottom: 1.5rem; color: #93c5fd;
+        }
         
         /* Buttons */
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; background: var(--accent); color: #000; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s ease; border: none; cursor: pointer; }
-        .btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
-        .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
-        .btn-outline:hover { background: var(--accent); color: #000; }
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center; 
+            padding: 1rem 2rem; background: #ffffff; color: #000; 
+            text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; 
+            text-transform: uppercase; letter-spacing: 0.1em; transition: 0.3s ease; border: 1px solid transparent; cursor: pointer; 
+        }
+        .btn:hover { background: #e5e5e5; }
+        .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+        .btn-accent { background: var(--accent); }
+        .btn-accent:hover { background: var(--accent-hover); }
         
-        /* Cards */
-        .card { background: var(--bg-panel); border: 1px solid var(--border-color); padding: 2rem; transition: 0.3s ease; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--accent); }
-        .card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; border: 1px solid var(--border-color); }
+        /* Glassmorphism Cards */
+        .card { 
+            background: rgba(20, 20, 20, 0.4); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); 
+            padding: 2.5rem; transition: 0.4s ease; display: flex; flex-direction: column; 
+            position: relative; overflow: hidden;
+        }
+        .card:hover { border-color: rgba(255,255,255,0.2); background: rgba(30, 30, 30, 0.5); }
+        .card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; margin-bottom: 1.5rem; border: 1px solid var(--border-color); filter: grayscale(80%); transition: 0.5s ease; }
+        .card:hover img { filter: grayscale(0%); }
         
         /* Portfolio Grid */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .portfolio-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); transition: transform 0.3s ease; }
-        .portfolio-grid img:hover { transform: scale(1.02); border-color: var(--accent); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 3rem; }
+        .portfolio-grid img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border: 1px solid var(--border-color); filter: grayscale(80%); transition: 0.5s ease; cursor: pointer; opacity: 0.8;}
+        .portfolio-grid img:hover { transform: scale(1.02); filter: grayscale(0%); opacity: 1; z-index: 10;}
         
         /* Map Image */
-        .map-wrapper { margin-top: 2rem; border: 1px solid var(--accent); border-radius: 4px; overflow: hidden; }
+        .map-wrapper { margin-top: 2rem; border: 1px solid var(--border-color); overflow: hidden; position: relative;}
         .map-wrapper a { display: block; position: relative; background: #000; }
-        .map-wrapper img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; transition: opacity 0.3s ease; }
-        .map-wrapper a:hover img { opacity: 0.7; }
+        .map-wrapper img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; transition: opacity 0.3s ease; opacity: 0.8;}
+        .map-wrapper a:hover img { opacity: 1; }
 
         /* AEO / FAQ */
-        .faq-list { list-style: none; }
-        .faq-list li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border-color); }
-        .faq-list strong { color: #fff; display: block; margin-bottom: 0.25rem; }
+        .faq-list { list-style: none; margin-top: 2rem; }
+        .faq-list li { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .faq-list strong { color: #fff; display: block; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1.1rem; }
         
         /* Forms */
         .form-group { margin-bottom: 1.5rem; }
-        .form-control { width: 100%; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); color: #fff; font-size: 1rem; }
-        .form-control:focus { outline: none; border-color: var(--accent); }
+        .form-control { width: 100%; padding: 1rem 0; background: transparent; border: none; border-bottom: 1px solid var(--border-color); color: #fff; font-size: 0.9rem; font-family: 'Manrope', sans-serif; transition: 0.3s ease;}
+        .form-control:focus { outline: none; border-bottom-color: #fff; }
         
         /* Lazy Render & Optimizations */
         .lazy-render { content-visibility: auto; contain-intrinsic-size: 1px 1000px; contain: paint; }
-        .speed-claim { font-size: 0.85rem; color: #4ade80; font-weight: 600; margin-top: 1rem; display: inline-block; padding: 0.5rem 1rem; border: 1px solid rgba(74, 222, 128, 0.2); background: rgba(74, 222, 128, 0.05); }
+        .speed-claim { font-size: 0.75rem; color: #a1a1aa; margin-top: 2rem; display: inline-block; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', monospace;}
         
         /* Tags & Footer */
         .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
-        .tag-item { font-size: 0.75rem; color: var(--text-muted); background: var(--bg-panel); padding: 0.25rem 0.75rem; border: 1px solid var(--border-color); border-radius: 100px; }
-        .footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; background: #050505; }
-        .footer a { color: var(--accent); text-decoration: none; }
+        .tag-item { font-size: 0.7rem; color: #666; background: transparent; padding: 0.25rem 0.75rem; border: 1px solid rgba(255,255,255,0.05); text-transform: uppercase; letter-spacing: 0.05em;}
+        .footer { padding: 4rem 0; text-align: center; font-size: 0.75rem; background: #050505; border-top: 1px solid var(--border-color); color: #666; letter-spacing: 0.05em; text-transform: uppercase;}
+        .footer a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px;}
+        .footer a:hover { border-color: #fff; }
         
         /* Sticky CTA Mobile */
-        .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 99; background: #25D366; padding: 1rem; text-align: center; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); }
-        .sticky-cta a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; display: block; animation: pulse 2s infinite; }
+        .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 99; background: #25D366; padding: 1.2rem 1rem; text-align: center; box-shadow: 0 -10px 30px rgba(0,0,0,0.5); }
+        .sticky-cta a { color: #fff; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; animation: pulse 2s infinite; }
         
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -100,6 +165,7 @@
             body { padding-bottom: 80px !important; }
             .sticky-cta { display: block; }
             h1 { font-size: 2.5rem; }
+            .card { padding: 1.5rem; }
         }
     </style>
 
@@ -173,48 +239,61 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
     <main class="hero">
         <div class="hero-img">
             <img src="Jasa-Coring-Beton-dan-Potong-Beton-Bandung-Presisi-Tinggi.webp" alt="Jasa Coring Beton dan Potong Beton Bandung Presisi Tinggi" fetchpriority="high" loading="eager" decoding="sync">
         </div>
         <div class="hero-overlay"></div>
         
-        <div class="container hero-content">
-            <span class="badge">Jasa Persewaan Peralatan Bangunan & Alat Berat</span>
-            <h1>SEWA ALAT PROYEK BANDUNG TERLENGKAP: UNIT PRIMA, PROYEK BEBAS MANGKRAK!</h1>
-            <p>Situs ini memuat di bawah 3 detik, secepat respon layanan kami. Kami hadir memotong rantai keterlambatan logistik proyek Anda di seluruh area Bandung Raya dan Cimahi.</p>
+        <div class="container hero-content animate-fade-up">
+            <div class="badge">Jasa Persewaan Peralatan Bangunan & Alat Berat</div>
+            <h1>SEWA ALAT PROYEK BANDUNG TERLENGKAP:<br><span style="color: var(--text-muted);">UNIT PRIMA, PROYEK BEBAS MANGKRAK.</span></h1>
             
-            <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://wa.me/6281320438866?text=*Halo%20Admin%20CV.%20Karya%20Anugrah%20Bandung*,%20saya%20ingin%20*Amankan%20Unit%20Sewa%20Alat%20Proyek%20Bandung*%20sekarang.%20Mohon%20info%20ketersediaan%20alat%20agar%20proyek%20saya%20tidak%20mangkrak." class="btn" target="_blank" rel="noopener noreferrer">Amankan Unit Sekarang</a>
-                <a href="#layanan" class="btn btn-outline">Lihat Daftar Alat</a>
+            <p style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; max-width: 600px;">Kami hadir memotong rantai keterlambatan logistik proyek Anda di seluruh area Bandung Raya dan Cimahi. Jaminan unit siap pakai dan pengiriman tepat waktu.</p>
+            
+            <div style="margin-top: 3rem; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                <a href="https://wa.me/6281320438866?text=*Halo%20Admin%20CV.%20Karya%20Anugrah%20Bandung*,%20saya%20ingin%20*Amankan%20Unit%20Sewa%20Alat%20Proyek%20Bandung*%20sekarang.%20Mohon%20info%20ketersediaan%20alat%20agar%20proyek%20saya%20tidak%20mangkrak." class="btn btn-accent" target="_blank" rel="noopener noreferrer">Amankan Unit Sekarang</a>
+                <a href="#layanan" class="btn btn-outline">Voir Nos Services</a>
             </div>
             
-            <div class="speed-claim">⚡ Situs dimuat < 3 detik. Layanan di lapangan 10x lebih cepat!</div>
+            <div class="speed-claim">Situs dimuat < 3 detik. Layanan lapangan 10x lebih cepat.</div>
         </div>
     </main>
 
     <div class="lazy-render">
-        <!-- Pain Point & AIDA Section -->
-        <section class="section" style="background-color: var(--bg-panel);">
+        <section class="section" style="background-color: var(--bg-dark);">
             <div class="container">
-                <div style="max-width: 800px;">
-                    <h2>Jangan Biarkan Proyek Mangkrak & Biaya Bengkak Akibat Alat Rusak!</h2>
-                    <p>Fakta di lapangan: 70% keterlambatan proyek (deadline molor) disebabkan oleh suplai alat konstruksi yang sering macet, mesin rewel, dan lambatnya respon vendor. Jangan pertaruhkan reputasi dan anggaran miliaran Anda pada penyedia layanan abal-abal yang menjebak dengan biaya tersembunyi.</p>
-                    <p>Bersama <strong>Karya Anugrah Alat Proyek</strong>, kami menjamin kepastian eksekusi. Dengan lebih dari 100+ proyek sukses terlayani, kami adalah solusi absolut Anda.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2>Bâtir avec rigueur <br><span>et vision long-terme.</span></h2>
+                        <p>Fakta di lapangan: 70% keterlambatan proyek (deadline molor) disebabkan oleh suplai alat konstruksi yang sering macet, mesin rewel, dan lambatnya respon vendor.</p>
+                        <p>Bersama CV. Karya Anugrah Alat Proyek, kami menjamin kepastian eksekusi. Jangan pertaruhkan reputasi dan anggaran miliaran Anda pada penyedia layanan abal-abal yang menjebak dengan biaya tersembunyi.</p>
+                    </div>
+                    <div class="card" style="padding: 2rem;">
+                        <h3 style="font-size: 1rem; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.1em;">Engagement Total</h3>
+                        <p style="font-size: 0.85rem;">Garantie décennale et respect strict des normes de sécurité et environnementales.</p>
+                        <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin: 1rem 0;"></div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">
+                            <span style="color: var(--text-muted);">Fiabilité</span>
+                            <span style="color: #fff;">100%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- USP Section -->
-        <section id="layanan" class="section">
+        <section id="layanan" class="section bg-[#0a0a0a]">
             <div class="container">
-                <h2 style="color: #fff; margin-bottom: 3rem;">Mengapa Memilih Agen Resmi Kami?</h2>
+                <div style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Nos Expertises</h2>
+                    <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">Une offre globale pour des projets complexes.</p>
+                </div>
+                
                 <div class="grid grid-3">
                     <div class="card">
                         <img src="Hasil-jasa-coring-beton-menembus-besi-tulangan-bulat-sempurna.webp" alt="Hasil jasa coring beton menembus besi tulangan bulat sempurna" loading="lazy">
                         <h3>Unit Selalu Prima & Siap Pakai</h3>
-                        <p>Pemeliharaan ketat pada setiap unit (stamper, jack hammer, excavator, molen). Alat turun ke lapangan langsung gass, tanpa mogok.</p>
+                        <p>Pemeliharaan ketat pada setiap unit (stamper, jack hammer, excavator, molen). Alat turun ke lapangan langsung gass.</p>
                     </div>
                     <div class="card">
                         <img src="Mesin-pemotong-lantai-beton-industri-slab-cutting-beroperasi.webp" alt="Mesin pemotong lantai beton industri slab cutting beroperasi" loading="lazy">
@@ -240,11 +319,11 @@
             </div>
         </section>
 
-        <!-- Portfolio Gallery Section -->
-        <section class="section" style="background-color: var(--bg-panel);">
+        <section class="section" style="background-color: #050505;">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 1rem;">Portofolio & Hasil Kerja</h2>
-                <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">Bukti nyata pengerjaan proyek di lapangan dengan tingkat presisi tinggi dan efisiensi waktu maksimal.</p>
+                <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Réalisations Récentes</h2>
+                <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem;">Portofolio & Hasil Kerja Presisi Tinggi.</p>
+                
                 <div class="portfolio-grid">
                     <img src="Proyek-pembuatan-lubang-coring-lantai-presisi-di-Bandung.webp" alt="Proyek pembuatan lubang coring lantai presisi di Bandung" loading="lazy">
                     <img src="Proyek-pemotongan-dinding-beton-untuk-modifikasi-struktur.webp" alt="Proyek pemotongan dinding beton untuk modifikasi struktur" loading="lazy">
@@ -258,75 +337,64 @@
             </div>
         </section>
 
-        <!-- AEO / FAQ Section -->
-        <section class="section">
+        <section class="section" style="background-color: var(--bg-dark);">
             <div class="container">
-                <h2 style="margin-bottom: 2rem;">Pertanyaan Seputar Rental Alat Proyek</h2>
+                <h2 style="font-size: 2rem; margin-bottom: 2rem;">FAQ / Tanya Jawab</h2>
                 <div style="max-width: 800px;">
                     <ul class="faq-list">
                         <li>
                             <strong>Berapa harga rental alat proyek di Bandung?</strong>
-                            Harga rental sangat transparan tanpa biaya tersembunyi. Tarif kompetitif disesuaikan dengan durasi sewa harian, mingguan, atau bulanan.
+                            <span style="color: var(--text-muted);">Harga rental sangat transparan tanpa biaya tersembunyi. Tarif kompetitif disesuaikan dengan durasi sewa harian, mingguan, atau bulanan.</span>
                         </li>
                         <li>
                             <strong>Di mana tempat persewaan alat berat terdekat?</strong>
-                            Pusat operasional kami mencakup pengiriman kilat ke seluruh Kota Bandung, Cimahi Utara, Cimahi Tengah, Cimahi Selatan, Padalarang, hingga Bandung Barat.
+                            <span style="color: var(--text-muted);">Pusat operasional kami mencakup pengiriman kilat ke seluruh Kota Bandung, Cimahi Utara, Cimahi Tengah, Cimahi Selatan, Padalarang, hingga Bandung Barat.</span>
                         </li>
                         <li>
                             <strong>Apakah agen resmi memberikan jaminan kondisi prima?</strong>
-                            Ya, sebagai spesialis vendor alat proyek, seluruh unit kami 100% kondisi prima, bergaransi ganti unit jika terjadi kendala teknis dari mesin.
+                            <span style="color: var(--text-muted);">Ya, sebagai spesialis vendor alat proyek, seluruh unit kami 100% kondisi prima, bergaransi ganti unit jika terjadi kendala teknis dari mesin.</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Silo Bridge Section -->
-        <section class="section" style="background-color: var(--bg-panel);">
-            <div class="container" style="text-align: center; max-width: 900px;">
-                <h2 style="color: #fff;">Garansi Penyelesaian Proyek Anda</h2>
-                <p style="font-size: 1.1rem; color: #ccc;">
-                    Jangan tunggu sampai target deadline proyek Anda berantakan dan rugi besar akibat alat konstruksi macet di lapangan. Segera percayakan seluruh kebutuhan jasa persewaan peralatan bangunan Anda bersama <a href="https://jasa-persewaan-peralatan-bangunan.vercel.app" style="color: var(--accent); font-weight: bold; text-decoration: none;">CV. Karya Anugrah Bandung</a> untuk jaminan unit prima, tarif transparan, dan sistem pengiriman super cepat tepat waktu langsung ke lokasi proyek Anda hari ini!
-                </p>
-            </div>
-        </section>
-
-        <!-- Form & Lead Catcher Section -->
-        <section id="booking" class="section" style="background-color: #111; border-top: 2px solid var(--accent);">
+        <section id="booking" class="section" style="background-color: #050505;">
             <div class="container">
-                <div class="grid grid-2" style="align-items: flex-start;">
-                    <div>
-                        <h2>Pesan Alat Sekarang</h2>
-                        <p>Isi formulir berikut untuk fast response, atau langsung hubungi WhatsApp kami. Unit terbatas setiap harinya!</p>
-                        
-                        <!-- Peta Lokasi -->
-                        <div class="map-wrapper">
-                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x2e68e5d5f0a0549b:0xe787630c66e76303?entry=gemini&utm_source=gemini&utm_campaign=gem-default" target="_blank" rel="noopener noreferrer" title="Buka Lokasi di Google Maps">
-                                <img src="Peta-lokasi-jasa-persewaan-bangunan-karya-anugrah-bandung.webp" alt="Peta lokasi jasa persewaan bangunan CV Karya Anugrah Bandung" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <form action="https://api.web3forms.com/submit" method="POST" class="card" style="background: #0a0a0a; margin-top: 0;">
-                            <input type="hidden" name="access_key" value="[PASTE ACCESS KEY WEB3FORMS DI SINI]">
-                            <input type="hidden" name="redirect" value="https://wa.me/6281320438866?text=*Halo%20Admin%20CV.%20Karya%20Anugrah%20Bandung*,%20saya%20sudah%20mengirimkan%20form%20permintaan%20di%20website.%20Saya%20butuh%20*jasa%20sewa%20alat%20proyek%20terdekat*%20dengan%20pengiriman%20cepat.%20Tolong%20bantu%20saya%20sekarang!">
+                <div class="card" style="background: rgba(15,15,15,0.8); border: 1px solid rgba(255,255,255,0.05); padding: 4rem 3rem;">
+                    <div class="grid grid-2" style="align-items: flex-start;">
+                        <div>
+                            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Prêt à concrétiser <br><span>votre projet ?</span></h2>
+                            <p style="margin-bottom: 2rem;">Isi formulir berikut untuk fast response, atau langsung hubungi WhatsApp kami. Unit terbatas setiap harinya!</p>
                             
-                            <div class="form-group">
-                                <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap / Perusahaan" required>
+                            <div class="map-wrapper" style="border-color: rgba(255,255,255,0.1);">
+                                <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x2e68e5d5f0a0549b:0xe787630c66e76303?entry=gemini&utm_source=gemini&utm_campaign=gem-default" target="_blank" rel="noopener noreferrer" title="Buka Lokasi di Google Maps">
+                                    <img src="Peta-lokasi-jasa-persewaan-bangunan-karya-anugrah-bandung.webp" alt="Peta lokasi jasa persewaan bangunan CV Karya Anugrah Bandung" loading="lazy">
+                                </a>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="alat" class="form-control" placeholder="Kebutuhan Alat (Molen, Excavator, dll)" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="lokasi" class="form-control" placeholder="Lokasi Proyek (Cibabat, Padalarang, dll)" required>
-                            </div>
-                            <button type="submit" class="btn" style="width: 100%;">Kirim Permintaan & Chat WA</button>
-                        </form>
+                        </div>
+                        <div>
+                            <form action="https://api.web3forms.com/submit" method="POST" style="margin-top: 0;">
+                                <input type="hidden" name="access_key" value="[PASTE ACCESS KEY WEB3FORMS DI SINI]">
+                                <input type="hidden" name="redirect" value="https://wa.me/6281320438866?text=*Halo%20Admin%20CV.%20Karya%20Anugrah%20Bandung*,%20saya%20sudah%20mengirimkan%20form%20permintaan%20di%20website.%20Saya%20butuh%20*jasa%20sewa%20alat%20proyek%20terdekat*%20dengan%20pengiriman%20cepat.%20Tolong%20bantu%20saya%20sekarang!">
+                                
+                                <div class="form-group">
+                                    <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap / Perusahaan" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="alat" class="form-control" placeholder="Kebutuhan Alat (Molen, Excavator, dll)" required>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 3rem;">
+                                    <input type="text" name="lokasi" class="form-control" placeholder="Lokasi Proyek (Cibabat, Padalarang, dll)" required>
+                                </div>
+                                <button type="submit" class="btn btn-accent" style="width: 100%; padding: 1.2rem;">Kirim Permintaan & Chat WA</button>
+                                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-top: 1.5rem; color: #666;">Réponse sous 48h ouvrées</p>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Tags LSI Injection -->
-                <div class="tags">
+                <div class="tags" style="justify-content: center; margin-top: 3rem;">
                     <span class="tag-item">kondisi prima siap pakai</span>
                     <span class="tag-item">bergaransi tepat waktu</span>
                     <span class="tag-item">respon cepat sigap</span>
@@ -343,16 +411,18 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>© 2026 Karya Anugrah Alat Proyek. All rights reserved.</p>
-                <p style="margin-top: 1rem;">SEO & Web Development by <a href="https://dongkrakusaha.com" target="_blank" rel="nofollow noopener noreferrer">dongkrakusaha.com</a></p>
+                <p style="margin-bottom: 1rem;">© 2026 CV. Karya Anugrah Bandung. Tous droits réservés.</p>
+                <p>SEO & Web Development by <a href="https://ciledugpromo.biz.id" target="_blank" rel="nofollow noopener noreferrer">ciledugpromo.biz.id</a></p>
+                
+                <div style="overflow: hidden; pointer-events: none; user-select: none; margin-top: 3rem; opacity: 0.03;">
+                    <h1 style="font-size: 10vw; line-height: 1; margin: 0; white-space: nowrap; font-family: 'Montserrat', sans-serif;">KARYA ANUGRAH</h1>
+                </div>
             </div>
         </footer>
     </div>
 
-    <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
         <a href="https://wa.me/6281320438866?text=*Halo%20Admin%20CV.%20Karya%20Anugrah%20Bandung*,%20saya%20butuh%20darurat%20*rental%20alat%20berat%20dan%20persewaan%20peralatan%20bangunan*%20dalam%20kondisi%20prima.%20Apakah%20unit%20tersedia%20hari%20ini?" target="_blank" rel="noopener noreferrer">🔥 HUBUNGI WHATSAPP DARURAT</a>
     </div>
