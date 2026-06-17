@@ -61,7 +61,9 @@
         
         /* Map Image */
         .map-wrapper { margin-top: 2rem; border: 1px solid var(--accent); border-radius: 4px; overflow: hidden; }
-        .map-wrapper img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+        .map-wrapper a { display: block; position: relative; background: #000; }
+        .map-wrapper img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; transition: opacity 0.3s ease; }
+        .map-wrapper a:hover img { opacity: 0.7; }
 
         /* AEO / FAQ */
         .faq-list { list-style: none; }
@@ -110,7 +112,7 @@
           "@id": "https://dongkrakusaha.com/#localbusiness",
           "name": "Karya Anugrah Alat Proyek",
           "image": "https://jasa-persewaan-peralatan-bangunan.vercel.app/Jasa-Coring-Beton-dan-Potong-Beton-Bandung-Presisi-Tinggi.webp",
-          "telephone": "6281234567890",
+          "telephone": "6281320438866",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Bandung",
@@ -299,13 +301,15 @@
                         
                         <!-- Peta Lokasi -->
                         <div class="map-wrapper">
-                            <img src="Peta-lokasi-jasa-persewaan-bangunan-karya-anugrah-bandung.webp" alt="Peta lokasi jasa persewaan bangunan CV Karya Anugrah Bandung" loading="lazy">
+                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x2e68e5d5f0a0549b:0xe787630c66e76303?entry=gemini&utm_source=gemini&utm_campaign=gem-default" target="_blank" rel="noopener noreferrer" title="Buka Lokasi di Google Maps">
+                                <img src="Peta-lokasi-jasa-persewaan-bangunan-karya-anugrah-bandung.webp" alt="Peta lokasi jasa persewaan bangunan CV Karya Anugrah Bandung" loading="lazy">
+                            </a>
                         </div>
                     </div>
                     <div>
                         <form action="https://api.web3forms.com/submit" method="POST" class="card" style="background: #0a0a0a; margin-top: 0;">
                             <input type="hidden" name="access_key" value="[PASTE ACCESS KEY WEB3FORMS DI SINI]">
-                            <input type="hidden" name="redirect" value="https://wa.me/6281234567890?text=*Halo Admin Karya Anugrah Alat Proyek, saya sudah mengisi formulir di website. Tolong bantu masalah saya terkait proyek yang terancam mangkrak dan butuh kepastian alat segera...*">
+                            <input type="hidden" name="redirect" value="https://wa.me/6281320438866?text=*Halo Admin CV. Karya Anugrah Bandung*, saya sudah mengisi formulir di website. Saya butuh *jasa sewa alat proyek terdekat* dengan pengiriman cepat. Tolong bantu saya, jangan sampai proyek mangkrak karena alat rusak!">
                             
                             <div class="form-group">
                                 <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap / Perusahaan" required>
@@ -343,14 +347,14 @@
         <footer class="footer">
             <div class="container">
                 <p>© 2026 Karya Anugrah Alat Proyek. All rights reserved.</p>
-                <p style="margin-top: 1rem;">SEO & Web Development by <a href="https://ciledugpromo.biz.id" target="_blank" rel="nofollow noopener noreferrer">ciledugpromo.biz.id</a></p>
+                <p style="margin-top: 1rem;">SEO & Web Development by <a href="https://dongkrakusaha.com" target="_blank" rel="nofollow noopener noreferrer">dongkrakusaha.com</a></p>
             </div>
         </footer>
     </div>
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-        <a href="https://wa.me/6281234567890?text=*Halo Admin Karya Anugrah Alat Proyek, saya butuh info ketersediaan alat proyek di Bandung...*">🔥 HUBUNGI WHATSAPP DARURAT</a>
+        <a href="https://wa.me/6281320438866?text=*Halo Admin CV. Karya Anugrah Bandung*, saya butuh darurat *rental alat berat dan persewaan peralatan bangunan* dalam kondisi prima. Apakah unit tersedia hari ini?">🔥 HUBUNGI WHATSAPP DARURAT</a>
     </div>
 
 </body>
