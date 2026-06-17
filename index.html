@@ -25,7 +25,7 @@
         h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #ffffff; text-transform: uppercase; }
         h1 { font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -1px; }
         h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--accent); }
-        h3 { font-size: 1.25rem; }
+        h3 { font-size: 1.25rem; margin-top: 1rem; }
         p { margin-bottom: 1rem; font-size: 1rem; color: var(--text-muted); }
         
         /* Layout & Utilities */
@@ -50,9 +50,19 @@
         .btn-outline:hover { background: var(--accent); color: #000; }
         
         /* Cards */
-        .card { background: var(--bg-panel); border: 1px solid var(--border-color); padding: 2rem; transition: 0.3s ease; }
+        .card { background: var(--bg-panel); border: 1px solid var(--border-color); padding: 2rem; transition: 0.3s ease; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--accent); }
+        .card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; border: 1px solid var(--border-color); }
         
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .portfolio-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); transition: transform 0.3s ease; }
+        .portfolio-grid img:hover { transform: scale(1.02); border-color: var(--accent); }
+        
+        /* Map Image */
+        .map-wrapper { margin-top: 2rem; border: 1px solid var(--accent); border-radius: 4px; overflow: hidden; }
+        .map-wrapper img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+
         /* AEO / FAQ */
         .faq-list { list-style: none; }
         .faq-list li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border-color); }
@@ -99,7 +109,7 @@
           "@type": "LocalBusiness",
           "@id": "https://dongkrakusaha.com/#localbusiness",
           "name": "Karya Anugrah Alat Proyek",
-          "image": "https://placehold.co/800x600/111/eab308/webp?text=Hero+Image",
+          "image": "https://jasa-persewaan-peralatan-bangunan.vercel.app/Jasa-Coring-Beton-dan-Potong-Beton-Bandung-Presisi-Tinggi.webp",
           "telephone": "6281234567890",
           "address": {
             "@type": "PostalAddress",
@@ -143,7 +153,7 @@
         {
           "@type": "WebPage",
           "@id": "https://dongkrakusaha.com/#webpage",
-          "url": "https://Jasa-Persewaan-Peralatan-Bangunan.vercel.app",
+          "url": "https://jasa-persewaan-peralatan-bangunan.vercel.app",
           "name": "Sewa Alat Proyek Bandung Terlengkap",
           "relatedLink": [
             "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-cibabat",
@@ -161,9 +171,10 @@
 </head>
 <body>
 
+    <!-- Hero Section -->
     <main class="hero">
         <div class="hero-img">
-            <img src="https://placehold.co/1920x1080/111/eab308/webp?text=Hero+Image" alt="sewa alat proyek bandung kondisi prima siap pakai" fetchpriority="high" loading="eager" decoding="sync">
+            <img src="Jasa-Coring-Beton-dan-Potong-Beton-Bandung-Presisi-Tinggi.webp" alt="Jasa Coring Beton dan Potong Beton Bandung Presisi Tinggi" fetchpriority="high" loading="eager" decoding="sync">
         </div>
         <div class="hero-overlay"></div>
         
@@ -182,6 +193,7 @@
     </main>
 
     <div class="lazy-render">
+        <!-- Pain Point & AIDA Section -->
         <section class="section" style="background-color: var(--bg-panel);">
             <div class="container">
                 <div style="max-width: 800px;">
@@ -192,19 +204,23 @@
             </div>
         </section>
 
+        <!-- USP Section -->
         <section id="layanan" class="section">
             <div class="container">
                 <h2 style="color: #fff; margin-bottom: 3rem;">Mengapa Memilih Agen Resmi Kami?</h2>
                 <div class="grid grid-3">
                     <div class="card">
+                        <img src="Hasil-jasa-coring-beton-menembus-besi-tulangan-bulat-sempurna.webp" alt="Hasil jasa coring beton menembus besi tulangan bulat sempurna" loading="lazy">
                         <h3>Unit Selalu Prima & Siap Pakai</h3>
                         <p>Pemeliharaan ketat pada setiap unit (stamper, jack hammer, excavator, molen). Alat turun ke lapangan langsung gass, tanpa mogok.</p>
                     </div>
                     <div class="card">
+                        <img src="Mesin-pemotong-lantai-beton-industri-slab-cutting-beroperasi.webp" alt="Mesin pemotong lantai beton industri slab cutting beroperasi" loading="lazy">
                         <h3>Pengiriman Tepat Waktu</h3>
                         <p>Armada standby! Kebutuhan alat proyek Bandung dikirim langsung ke titik koordinat lokasi proyek tanpa alasan telat.</p>
                     </div>
                     <div class="card">
+                        <img src="Pengambilan-sampel-silinder-core-drill-aspal-jalan-untuk-uji-laboratorium.webp" alt="Pengambilan sampel silinder core drill aspal jalan untuk uji laboratorium" loading="lazy">
                         <h3>Harga Transparan Komplit</h3>
                         <p>Tanpa biaya siluman. Anda mendapatkan rincian tarif sewa yang jujur dan bersaing untuk kelancaran operasional.</p>
                     </div>
@@ -220,7 +236,26 @@
             </div>
         </section>
 
+        <!-- Portfolio Gallery Section -->
         <section class="section" style="background-color: var(--bg-panel);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 1rem;">Portofolio & Hasil Kerja</h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">Bukti nyata pengerjaan proyek di lapangan dengan tingkat presisi tinggi dan efisiensi waktu maksimal.</p>
+                <div class="portfolio-grid">
+                    <img src="Proyek-pembuatan-lubang-coring-lantai-presisi-di-Bandung.webp" alt="Proyek pembuatan lubang coring lantai presisi di Bandung" loading="lazy">
+                    <img src="Proyek-pemotongan-dinding-beton-untuk-modifikasi-struktur.webp" alt="Proyek pemotongan dinding beton untuk modifikasi struktur" loading="lazy">
+                    <img src="Alat-berat-mesin-diamond-core-drill-spesifikasi-standar-Eropa.webp" alt="Alat berat mesin diamond core drill spesifikasi standar Eropa" loading="lazy">
+                    <img src="Proyek-pengambilan-sampel-core-drill-aspal-di-jalan-raya.webp" alt="Proyek pengambilan sampel core drill aspal di jalan raya" loading="lazy">
+                    <img src="Jasa-wire-saw-pemotongan-pilar-beton-pabrik-industri.webp" alt="Jasa wire saw pemotongan pilar beton pabrik industri" loading="lazy">
+                    <img src="Hasil-coring-beton-simetris-untuk-jalur-pipa-instalasi-MEP-gedung.webp" alt="Hasil coring beton simetris untuk jalur pipa instalasi MEP gedung" loading="lazy">
+                    <img src="Pengangkatan-pelat-beton-hasil-slab-cutting-secara-presisi.webp" alt="Pengangkatan pelat beton hasil slab cutting secara presisi" loading="lazy">
+                    <img src="Operasional-mesin-wall-saw-memotong-tembok-beton-tebal.webp" alt="Operasional mesin wall saw memotong tembok beton tebal" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- AEO / FAQ Section -->
+        <section class="section">
             <div class="container">
                 <h2 style="margin-bottom: 2rem;">Pertanyaan Seputar Rental Alat Proyek</h2>
                 <div style="max-width: 800px;">
@@ -242,24 +277,31 @@
             </div>
         </section>
 
-        <section class="section">
+        <!-- Silo Bridge Section -->
+        <section class="section" style="background-color: var(--bg-panel);">
             <div class="container" style="text-align: center; max-width: 900px;">
                 <h2 style="color: #fff;">Garansi Penyelesaian Proyek Anda</h2>
                 <p style="font-size: 1.1rem; color: #ccc;">
-                    Jangan tunggu sampai target deadline proyek Anda berantakan dan rugi besar akibat alat konstruksi macet di lapangan. Segera percayakan seluruh kebutuhan jasa persewaan peralatan bangunan Anda bersama <a href="https://Jasa-Persewaan-Peralatan-Bangunan.vercel.app" style="color: var(--accent); font-weight: bold; text-decoration: none;">CV. Karya Anugrah Bandung</a> untuk jaminan unit prima, tarif transparan, dan sistem pengiriman super cepat tepat waktu langsung ke lokasi proyek Anda hari ini!
+                    Jangan tunggu sampai target deadline proyek Anda berantakan dan rugi besar akibat alat konstruksi macet di lapangan. Segera percayakan seluruh kebutuhan jasa persewaan peralatan bangunan Anda bersama <a href="https://jasa-persewaan-peralatan-bangunan.vercel.app" style="color: var(--accent); font-weight: bold; text-decoration: none;">CV. Karya Anugrah Bandung</a> untuk jaminan unit prima, tarif transparan, dan sistem pengiriman super cepat tepat waktu langsung ke lokasi proyek Anda hari ini!
                 </p>
             </div>
         </section>
 
+        <!-- Form & Lead Catcher Section -->
         <section id="booking" class="section" style="background-color: #111; border-top: 2px solid var(--accent);">
             <div class="container">
-                <div class="grid grid-2" style="align-items: center;">
+                <div class="grid grid-2" style="align-items: flex-start;">
                     <div>
                         <h2>Pesan Alat Sekarang</h2>
                         <p>Isi formulir berikut untuk fast response, atau langsung hubungi WhatsApp kami. Unit terbatas setiap harinya!</p>
+                        
+                        <!-- Peta Lokasi -->
+                        <div class="map-wrapper">
+                            <img src="Peta-lokasi-jasa-persewaan-bangunan-karya-anugrah-bandung.webp.webp" alt="Peta-lokasi-jasa-persewaan-bangunan-karya-anugrah-bandung.webp" loading="lazy">
+                        </div>
                     </div>
                     <div>
-                        <form action="https://api.web3forms.com/submit" method="POST" class="card" style="background: #0a0a0a;">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="card" style="background: #0a0a0a; margin-top: 0;">
                             <input type="hidden" name="access_key" value="[PASTE ACCESS KEY WEB3FORMS DI SINI]">
                             <input type="hidden" name="redirect" value="https://wa.me/6281234567890?text=*Halo Admin Karya Anugrah Alat Proyek, saya sudah mengisi formulir di website. Tolong bantu masalah saya terkait proyek yang terancam mangkrak dan butuh kepastian alat segera...*">
                             
@@ -277,6 +319,7 @@
                     </div>
                 </div>
 
+                <!-- Tags LSI Injection -->
                 <div class="tags">
                     <span class="tag-item">kondisi prima siap pakai</span>
                     <span class="tag-item">bergaransi tepat waktu</span>
@@ -294,6 +337,7 @@
             </div>
         </section>
 
+        <!-- Footer -->
         <footer class="footer">
             <div class="container">
                 <p>&copy; 2026 Karya Anugrah Alat Proyek. All rights reserved.</p>
@@ -302,6 +346,7 @@
         </footer>
     </div>
 
+    <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
         <a href="https://wa.me/6281234567890?text=*Halo Admin Karya Anugrah Alat Proyek, saya butuh info ketersediaan alat proyek di Bandung...*">🔥 HUBUNGI WHATSAPP DARURAT</a>
     </div>
