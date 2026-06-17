@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Alat Proyek Bandung Bergaransi & Terlengkap | Karya Anugrah</title>
+    <meta name="description" content="Jasa sewa alat proyek Bandung dan Cimahi. Unit prima siap pakai, pengiriman tepat waktu, harga transparan. Hindari proyek mangkrak sekarang!">
+    <meta name="keywords" content="Sewa Alat Proyek Bandung, jasa sewa, rental murah, tempat persewaan, spesialis, harga rental, agen resmi, vendor">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-panel: #141414;
+            --text-main: #e5e5e5;
+            --text-muted: #a1a1aa;
+            --accent: #facc15;
+            --accent-hover: #eab308;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        
+        /* Typography */
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #ffffff; text-transform: uppercase; }
+        h1 { font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -1px; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--accent); }
+        h3 { font-size: 1.25rem; }
+        p { margin-bottom: 1rem; font-size: 1rem; color: var(--text-muted); }
+        
+        /* Layout & Utilities */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 5rem 0; border-bottom: 1px solid var(--border-color); }
+        .grid { display: grid; gap: 2rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        /* Hero Section */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
+        .hero-img { position: absolute; inset: 0; z-index: 0; }
+        .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(100%); }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-dark), transparent); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .badge { display: inline-block; padding: 0.25rem 1rem; border-left: 2px solid var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; background: rgba(255,255,255,0.05); }
+        
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; background: var(--accent); color: #000; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s ease; border: none; cursor: pointer; }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: #000; }
+        
+        /* Cards */
+        .card { background: var(--bg-panel); border: 1px solid var(--border-color); padding: 2rem; transition: 0.3s ease; }
+        .card:hover { border-color: var(--accent); }
+        
+        /* AEO / FAQ */
+        .faq-list { list-style: none; }
+        .faq-list li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border-color); }
+        .faq-list strong { color: #fff; display: block; margin-bottom: 0.25rem; }
+        
+        /* Forms */
+        .form-group { margin-bottom: 1.5rem; }
+        .form-control { width: 100%; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); color: #fff; font-size: 1rem; }
+        .form-control:focus { outline: none; border-color: var(--accent); }
+        
+        /* Lazy Render & Optimizations */
+        .lazy-render { content-visibility: auto; contain-intrinsic-size: 1px 1000px; contain: paint; }
+        .speed-claim { font-size: 0.85rem; color: #4ade80; font-weight: 600; margin-top: 1rem; display: inline-block; padding: 0.5rem 1rem; border: 1px solid rgba(74, 222, 128, 0.2); background: rgba(74, 222, 128, 0.05); }
+        
+        /* Tags & Footer */
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+        .tag-item { font-size: 0.75rem; color: var(--text-muted); background: var(--bg-panel); padding: 0.25rem 0.75rem; border: 1px solid var(--border-color); border-radius: 100px; }
+        .footer { padding: 3rem 0; text-align: center; font-size: 0.85rem; background: #050505; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        
+        /* Sticky CTA Mobile */
+        .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 99; background: #25D366; padding: 1rem; text-align: center; box-shadow: 0 -4px 20px rgba(0,0,0,0.5); }
+        .sticky-cta a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; display: block; animation: pulse 2s infinite; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Agency Protection */
+        @media (max-width: 768px) { 
+            body { padding-bottom: 80px !important; }
+            .sticky-cta { display: block; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://dongkrakusaha.com/#localbusiness",
+          "name": "Karya Anugrah Alat Proyek",
+          "image": "https://placehold.co/800x600/111/eab308/webp?text=Hero+Image",
+          "telephone": "6281234567890",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bandung",
+            "addressRegion": "Jawa Barat",
+            "addressCountry": "ID"
+          },
+          "priceRange": "$$",
+          "sameAs": ["https://www.google.com/maps/place//data=!4m2!3m1!1s0x2e68e5d5f0a0549b:0xe787630c66e76303?entry=gemini&utm_source=gemini&utm_campaign=gem-default"]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://dongkrakusaha.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Berapa harga rental alat proyek di Bandung?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Harga rental sangat transparan tanpa biaya tersembunyi. Silakan hubungi kami untuk mendapatkan penawaran terbaik sesuai durasi sewa."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Di mana tempat persewaan alat berat terdekat?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kami melayani seluruh Bandung Raya dan Cimahi dengan pengiriman tepat waktu langsung ke lokasi proyek Anda."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah unit spesialis sewa dalam kondisi prima?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tentu. Sebagai agen resmi, semua unit alat bangunan dan alat berat kami dijamin prima, siap pakai, dan terawat lengkap."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://dongkrakusaha.com/#webpage",
+          "url": "https://Jasa-Persewaan-Peralatan-Bangunan.vercel.app",
+          "name": "Sewa Alat Proyek Bandung Terlengkap",
+          "relatedLink": [
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-cibabat",
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-cimahi-utara",
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-cimahi-tengah",
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-cimahi-selatan",
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-kota-bandung",
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-bandung-barat",
+            "https://dongkrakusaha.com/layanan-sewa-alat-proyek-bandung-padalarang"
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <main class="hero">
+        <div class="hero-img">
+            <img src="https://placehold.co/1920x1080/111/eab308/webp?text=Hero+Image" alt="sewa alat proyek bandung kondisi prima siap pakai" fetchpriority="high" loading="eager" decoding="sync">
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content">
+            <span class="badge">Jasa Persewaan Peralatan Bangunan & Alat Berat</span>
+            <h1>SEWA ALAT PROYEK BANDUNG TERLENGKAP: UNIT PRIMA, PROYEK BEBAS MANGKRAK!</h1>
+            <p>Situs ini memuat di bawah 3 detik, secepat respon layanan kami. Kami hadir memotong rantai keterlambatan logistik proyek Anda di seluruh area Bandung Raya dan Cimahi.</p>
+            
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#booking" class="btn">Amankan Unit Sekarang</a>
+                <a href="#layanan" class="btn btn-outline">Lihat Daftar Alat</a>
+            </div>
+            
+            <div class="speed-claim">⚡ Situs dimuat < 3 detik. Layanan di lapangan 10x lebih cepat!</div>
+        </div>
+    </main>
+
+    <div class="lazy-render">
+        <section class="section" style="background-color: var(--bg-panel);">
+            <div class="container">
+                <div style="max-width: 800px;">
+                    <h2>Jangan Biarkan Proyek Mangkrak & Biaya Bengkak Akibat Alat Rusak!</h2>
+                    <p>Fakta di lapangan: 70% keterlambatan proyek (deadline molor) disebabkan oleh suplai alat konstruksi yang sering macet, mesin rewel, dan lambatnya respon vendor. Jangan pertaruhkan reputasi dan anggaran miliaran Anda pada penyedia layanan abal-abal yang menjebak dengan biaya tersembunyi.</p>
+                    <p>Bersama <strong>Karya Anugrah Alat Proyek</strong>, kami menjamin kepastian eksekusi. Dengan lebih dari 100+ proyek sukses terlayani, kami adalah solusi absolut Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="layanan" class="section">
+            <div class="container">
+                <h2 style="color: #fff; margin-bottom: 3rem;">Mengapa Memilih Agen Resmi Kami?</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Unit Selalu Prima & Siap Pakai</h3>
+                        <p>Pemeliharaan ketat pada setiap unit (stamper, jack hammer, excavator, molen). Alat turun ke lapangan langsung gass, tanpa mogok.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pengiriman Tepat Waktu</h3>
+                        <p>Armada standby! Kebutuhan alat proyek Bandung dikirim langsung ke titik koordinat lokasi proyek tanpa alasan telat.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Harga Transparan Komplit</h3>
+                        <p>Tanpa biaya siluman. Anda mendapatkan rincian tarif sewa yang jujur dan bersaing untuk kelancaran operasional.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Respon Cepat & Sigap</h3>
+                        <p>Butuh alat darurat seperti pompa air alcon di tengah malam? Tim support kami selalu responsif.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Konsultasi Kebutuhan Gratis</h3>
+                        <p>Bingung spesifikasi alat? Ahli kami siap menghitung dan merekomendasikan alat yang paling efisien untuk medan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--bg-panel);">
+            <div class="container">
+                <h2 style="margin-bottom: 2rem;">Pertanyaan Seputar Rental Alat Proyek</h2>
+                <div style="max-width: 800px;">
+                    <ul class="faq-list">
+                        <li>
+                            <strong>Berapa harga rental alat proyek di Bandung?</strong>
+                            Harga rental sangat transparan tanpa biaya tersembunyi. Tarif kompetitif disesuaikan dengan durasi sewa harian, mingguan, atau bulanan.
+                        </li>
+                        <li>
+                            <strong>Di mana tempat persewaan alat berat terdekat?</strong>
+                            Pusat operasional kami mencakup pengiriman kilat ke seluruh Kota Bandung, Cimahi Utara, Cimahi Tengah, Cimahi Selatan, Padalarang, hingga Bandung Barat.
+                        </li>
+                        <li>
+                            <strong>Apakah agen resmi memberikan jaminan kondisi prima?</strong>
+                            Ya, sebagai spesialis vendor alat proyek, seluruh unit kami 100% kondisi prima, bergaransi ganti unit jika terjadi kendala teknis dari mesin.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="text-align: center; max-width: 900px;">
+                <h2 style="color: #fff;">Garansi Penyelesaian Proyek Anda</h2>
+                <p style="font-size: 1.1rem; color: #ccc;">
+                    Jangan tunggu sampai target deadline proyek Anda berantakan dan rugi besar akibat alat konstruksi macet di lapangan. Segera percayakan seluruh kebutuhan jasa persewaan peralatan bangunan Anda bersama <a href="https://Jasa-Persewaan-Peralatan-Bangunan.vercel.app" style="color: var(--accent); font-weight: bold; text-decoration: none;">CV. Karya Anugrah Bandung</a> untuk jaminan unit prima, tarif transparan, dan sistem pengiriman super cepat tepat waktu langsung ke lokasi proyek Anda hari ini!
+                </p>
+            </div>
+        </section>
+
+        <section id="booking" class="section" style="background-color: #111; border-top: 2px solid var(--accent);">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <div>
+                        <h2>Pesan Alat Sekarang</h2>
+                        <p>Isi formulir berikut untuk fast response, atau langsung hubungi WhatsApp kami. Unit terbatas setiap harinya!</p>
+                    </div>
+                    <div>
+                        <form action="https://api.web3forms.com/submit" method="POST" class="card" style="background: #0a0a0a;">
+                            <input type="hidden" name="access_key" value="[PASTE ACCESS KEY WEB3FORMS DI SINI]">
+                            <input type="hidden" name="redirect" value="https://wa.me/6281234567890?text=*Halo Admin Karya Anugrah Alat Proyek, saya sudah mengisi formulir di website. Tolong bantu masalah saya terkait proyek yang terancam mangkrak dan butuh kepastian alat segera...*">
+                            
+                            <div class="form-group">
+                                <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap / Perusahaan" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="alat" class="form-control" placeholder="Kebutuhan Alat (Molen, Excavator, dll)" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lokasi" class="form-control" placeholder="Lokasi Proyek (Cibabat, Padalarang, dll)" required>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Kirim Permintaan & Chat WA</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="tags">
+                    <span class="tag-item">kondisi prima siap pakai</span>
+                    <span class="tag-item">bergaransi tepat waktu</span>
+                    <span class="tag-item">respon cepat sigap</span>
+                    <span class="tag-item">tarif transparan komplit</span>
+                    <span class="tag-item">unit terawat lengkap</span>
+                    <span class="tag-item">Cibabat</span>
+                    <span class="tag-item">Cimahi Utara</span>
+                    <span class="tag-item">Cimahi Tengah</span>
+                    <span class="tag-item">Cimahi Selatan</span>
+                    <span class="tag-item">Kota Bandung</span>
+                    <span class="tag-item">Bandung Barat</span>
+                    <span class="tag-item">Padalarang</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Karya Anugrah Alat Proyek. All rights reserved.</p>
+                <p style="margin-top: 1rem;">SEO & Web Development by <a href="https://ciledugpromo.biz.id" target="_blank" rel="nofollow noopener noreferrer">ciledugpromo.biz.id</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="sticky-cta">
+        <a href="https://wa.me/6281234567890?text=*Halo Admin Karya Anugrah Alat Proyek, saya butuh info ketersediaan alat proyek di Bandung...*">🔥 HUBUNGI WHATSAPP DARURAT</a>
+    </div>
+
+</body>
+</html>
